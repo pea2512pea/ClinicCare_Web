@@ -1,0 +1,17 @@
+<%- include('../partials/header', { title: title }) %>
+
+<div class="container">
+    <div class="page-header">
+        <div class="title-stack">
+            <a href="/admin/services" class="back-link">← Back to Catalog</a>
+            <h1><%= title %></h1>
+        </div>
+    </div>
+
+    <div id="service-form-container" data-id="<%= serviceId || '' %>">
+         <div class="loading-spinner">Preparing catalog editor...</div>
+    </div>
+</div>
+
+<script src="/js/services/services-form.js"></script>
+<%- include('../partials/footer') %>

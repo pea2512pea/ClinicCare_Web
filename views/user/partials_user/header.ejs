@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title || "Clinic Care" %></title>
+  <link rel="icon" type="image/png" href="/images/light_icon.png"/>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/user/header.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="navbar">
+
+        <!-- book new appointment view history and logout -->
+        <a href="/user/" class="logo">
+          <img src="/images/light_icon.png" alt="Clinic Care Icon"/>
+          Clinic Care
+        </a>
+        <div class="menu">
+            <a href="/user/">Home</a>
+            <a href="/user/book-appointment">Book Appointment</a>
+            <a href="/user/appointments">Appointment History</a>
+            <a href="/user/profile">Profile</a>
+              <a href="#" onclick="handleLogout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<main>
+  <div id="snackbar">
+    <div class="message">
+    </div>
+    <div class="detail">
+    </div>
+  </div>

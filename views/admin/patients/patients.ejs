@@ -1,0 +1,40 @@
+<%- include('../partials/header', { title: 'Manage Patients' }) %>
+
+<div class="container">
+  <div class="admin-view-header">
+    <div class="title-stack">
+      <h1>Patients</h1>
+      <p>Manage, search, and edit patient records</p>
+    </div>
+    <a href="/admin/patients-add" class="btn-primary-new">+ Add Patient</a>
+  </div>
+
+  <div class="data-wrapper">
+    <div class="search-container">
+      <form onsubmit="handleSearch(event)" class="minimal-search">
+        <span class="search-icon">🔍</span>
+        <input type="search" name="search" placeholder="Search by name, ID, or email..." />
+        <button type="submit" class="btn-search-action">Search Records</button>
+      </form>
+    </div>
+
+    <table class="clean-table">
+      <thead>
+        <tr>
+          <th>Citizen ID</th>
+          <th>Patient Name</th>
+          <th>Contact</th>
+          <th class="text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="patients-table">
+        <tr><td colspan="4" class="table-loader">Fetching records...</td></tr>
+      </tbody>
+    </table>
+
+    <div id="pagination" class="pagination-container"></div>
+  </div>
+</div>
+
+<script src="/js/patients/patients.js"></script>
+<%- include('../partials/footer') %>

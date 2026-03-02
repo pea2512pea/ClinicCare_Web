@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title || "Clinic System" %></title>
+    <link rel="icon" type="image/png" href="/images/light_icon.png" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/admin/header.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="navbar">
+          <a href="/admin/" class="logo">
+            <img src="/images/light_icon.png" alt="Clinic Care Icon" />
+            <span>Clinic Care</span>
+          </a>
+        </div>
+        <nav class="sidebar-nav">
+          <small class="nav-label">Main Menu</small>
+          <a href="/admin/" class="nav-item">📊 Dashboard</a>
+          <a href="/admin/todays-appointments" class="nav-item"
+            >📅 Today's Tasks</a
+          >
+
+          <small class="nav-label">Management</small>
+          <a href="/admin/patients" class="nav-item">👤 Patients</a>
+          <a href="/admin/doctors" class="nav-item">👨‍⚕️ Doctors</a>
+          <a href="/admin/appointments" class="nav-item">📝 All Appointments</a>
+          <a href="/admin/services" class="nav-item">💉 Services</a>
+
+          <small class="nav-label">Analytics</small>
+          <a href="/admin/report1" class="nav-item">📄 Appointment Report</a>
+          <a href="/admin/report2" class="nav-item">💰 Revenue Report</a>
+
+          <div class="sidebar-footer">
+            <a class="logout-link" href="#" onclick="handleLogout()"
+              >🚪 Logout</a
+            >
+          </div>
+        </nav>
+      </div>
+    </nav>
+    <main>
+      <div id="snackbar">
+        <div class="message"></div>
+        <div class="detail"></div>
+      </div>

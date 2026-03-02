@@ -1,0 +1,46 @@
+<%- include('../partials/header', { title: 'Manage Appointments' }) %>
+
+<div class="container">
+  <div class="admin-view-header">
+    <div class="title-stack">
+      <h1>Appointments</h1>
+      <p>Schedule and manage patient visits and medical services</p>
+    </div>
+    <a href="/admin/appointments-add" class="btn-primary-new">+ Add Appointment</a>
+  </div>
+
+  <div class="data-wrapper">
+    <div class="search-container">
+      <form onsubmit="handleSearch(event)" class="search-flex-group">
+        <div class="input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="search" name="search" id="appSearchInput" placeholder="Search by date, time, or status..." />
+        </div>
+        <button type="submit" class="btn-search-action">Search</button>
+      </form>
+    </div>
+
+    <table class="clean-table">
+      <thead>
+        <tr>
+          <th>Date & Time</th>
+          <th>Patient</th>
+          <th>Services</th>
+          <th>Doctor</th>
+          <th>Status</th>
+          <th class="text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody id="appointments-table">
+        <tr>
+          <td colspan="6" class="table-loader">Loading appointments...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="pagination" class="pagination-container"></div>
+  </div>
+</div>
+
+<script src="/js/appointments/appointments.js"></script>
+<%- include('../partials/footer') %>

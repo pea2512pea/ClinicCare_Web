@@ -1,0 +1,12 @@
+<%- include('../partials/header', { title: title }) %>
+
+<h1 id="form-title"><%= title %></h1>
+
+<div id="patient-form-container"
+     data-id="<%= patientId || '' %>">
+     Loading...
+</div>
+
+<script src="/js/patients/patients-form.js"></script>
+
+<%- include('../partials/footer') %>

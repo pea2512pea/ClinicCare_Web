@@ -1,0 +1,44 @@
+<%- include('../partials/header', { title: 'Manage Services' }) %>
+
+<div class="container">
+  <div class="admin-view-header">
+    <div class="title-stack">
+      <h1>Clinic Services</h1>
+      <p>Configure medical procedures, pricing, and estimated durations</p>
+    </div>
+    <a href="/admin/services-add" class="btn-primary-new">+ Add Service</a>
+  </div>
+
+  <div class="data-wrapper">
+    <div class="search-container">
+      <form onsubmit="handleSearch(event)" class="search-flex-group">
+        <div class="input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="search" name="search" id="serviceSearchInput" placeholder="Search by service name..." />
+        </div>
+        <button type="submit" class="btn-search-action">Filter Services</button>
+      </form>
+    </div>
+
+    <table class="clean-table">
+      <thead>
+        <tr>
+          <th>Service Name</th>
+          <th>Estimated Duration</th>
+          <th>Base Price</th>
+          <th class="text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="services-table">
+        <tr>
+          <td colspan="4" class="table-loader">Loading services list...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="pagination" class="pagination-container"></div>
+  </div>
+</div>
+
+<script src="/js/services/services.js"></script>
+<%- include('../partials/footer') %>

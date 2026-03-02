@@ -1,0 +1,73 @@
+<%- include('../partials/header', { title: 'Service Revenue Analytics' }) %>
+
+<div class="report-container">
+    <header class="report-header">
+        <div class="header-text">
+            <h1>Financial Analytics</h1>
+            <p>Track service performance and total clinic revenue.</p>
+        </div>
+        <div class="header-actions">
+            <button type="submit" form="filterForm" class="btn-generate">📊 Update Analysis</button>
+        </div>
+    </header>
+
+    <section class="filter-card">
+        <form id="filterForm" class="filter-grid">
+            <div class="filter-group">
+                <label>Medical Services</label>
+                <div id="servicesContainer" class="dynamic-select-stack">
+                    </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Analysis Period</label>
+                <div class="date-input-group">
+                    <input type="date" id="startDate">
+                    <span>to</span>
+                    <input type="date" id="endDate">
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="revenueDashboard" class="revenue-stats-grid" style="display: none;">
+        <div class="kpi-card total-revenue">
+            <label>Total Period Revenue</label>
+            <h2 id="totalRevenueText">฿0.00</h2>
+            <div class="kpi-icon">💰</div>
+        </div>
+        
+        <div class="kpi-card top-performer">
+            <label>Most Making Service</label>
+            <h3 id="topServiceName">-</h3>
+            <p id="topServiceStats">0 appointments</p>
+            <div class="kpi-icon">⭐</div>
+        </div>
+    </section>
+
+    <section class="table-card">
+        <div class="table-header">
+            <h3>Revenue Breakdown by Service</h3>
+        </div>
+        <div class="table-responsive">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Service Name</th>
+                        <th class="text-center">Total Appointments</th>
+                        <th class="text-right">Total Revenue</th>
+                    </tr>
+                </thead>
+                <tbody id="reportResults">
+                    <tr>
+                        <td colspan="4" class="no-data">Select date range to calculate revenue</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<script src="/js/reports/report2.js"></script>
+<%- include('../partials/footer') %>

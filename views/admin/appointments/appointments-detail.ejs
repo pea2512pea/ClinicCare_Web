@@ -1,0 +1,17 @@
+<%- include('../partials/header', { title: 'Appointment Details' }) %>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Appointment Management</h1>
+        <a href="/admin/todays-appointments" class="btn-view">← Back to Schedule</a>
+    </div>
+
+    <div id="appointment-detail" class="detail-grid" data-id="<%= appointmentId %>">
+        <div class="loading-spinner">Loading appointment data...</div>
+    </div>
+
+    <div id="actions" class="actions-bar"></div>
+</div>
+
+<script src="/js/appointments/appointments-detail.js"></script>
+<%- include('../partials/footer') %>

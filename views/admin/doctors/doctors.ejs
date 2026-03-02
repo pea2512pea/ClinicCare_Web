@@ -1,0 +1,46 @@
+<%- include('../partials/header', { title: 'Manage Doctors' }) %>
+
+<div class="container">
+  <div class="admin-view-header">
+    <div class="title-stack">
+      <h1>Doctors</h1>
+      <p>Manage medical staff, specialties, and access roles</p>
+    </div>
+    <a href="/admin/doctors-add" class="btn-primary-new">+ Add Doctor</a>
+  </div>
+
+  <div class="data-wrapper">
+    <div class="search-container">
+      <form onsubmit="handleSearch(event)" class="search-flex-group">
+        <div class="input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="search" name="search" id="doctorSearchInput" placeholder="Search by name, specialty, or email..." />
+        </div>
+        <button type="submit" class="btn-search-action">Search Doctors</button>
+      </form>
+    </div>
+
+    <table class="clean-table">
+      <thead>
+        <tr>
+          <th>Staff ID</th>
+          <th>Doctor Name</th>
+          <th>Specialty</th>
+          <th>Contact</th>
+          <th>Role</th>
+          <th class="text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="doctors-table">
+        <tr>
+          <td colspan="6" class="table-loader">Loading medical staff...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="pagination" class="pagination-container  "></div>
+  </div>
+</div>
+
+<script src="/js/doctors/doctors.js"></script>
+<%- include('../partials/footer') %>

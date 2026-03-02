@@ -1,0 +1,50 @@
+<%- include('partials/header', { title: 'Today\'s Tasks' }) %>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Today's Appointments</h1>
+        <p id="current-date-display"></p>
+    </div>
+
+    <section class="card table-card alert-border">
+        <div class="card-header">
+            <h2 class="text-warning">⏳ Pending Approval</h2>
+            <small>Review these requests to confirm or deny</small>
+        </div>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Time & Duration</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="pending-appointment-table-body">
+                <tr><td colspan="5" class="text-center">Checking for requests...</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="card table-card" style="margin-top: 30px;">
+        <div class="card-header">
+            <h2>📅 Today's Full Schedule</h2>
+        </div>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="today-appointment-table-body">
+                <tr><td colspan="5" class="text-center">Loading schedule...</td></tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<script src="/js/admin/todaysAppointments.js"></script>
+<%- include('partials/footer') %>

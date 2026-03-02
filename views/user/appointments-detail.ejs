@@ -1,0 +1,10 @@
+<%- include('./partials_user/header.ejs', { title: 'Appointment Details' }) %>
+
+<div id="appointment-detail" data-id="<%= appointmentId %>">
+    <div class="card loading">
+        <p>Fetching your appointment data...</p>
+    </div>
+</div>
+
+<script src="/js/user/appointments-detail.js"></script>
+<%- include('./partials_user/footer.ejs') %>

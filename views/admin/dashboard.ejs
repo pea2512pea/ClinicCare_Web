@@ -1,0 +1,86 @@
+<%- include('partials/header', { title: 'Admin Dashboard' }) %>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Clinic Overview</h1>
+        <p>Welcome back, Administrator</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Total Doctors</h3>
+            <p id="totalDoctors" class="stat-value">--</p>
+        </div>
+        <div class="stat-card">
+            <h3>Total Patients</h3>
+            <p id="totalPatients" class="stat-value">--</p>
+        </div>
+        <div class="stat-card" style="border-top-color: #f59e0b;">
+            <h3>Pending</h3>
+            <p id="pendingAppointments" class="stat-value">--</p>
+        </div>
+        <div class="stat-card" style="border-top-color: #3b82f6;">
+            <h3>Today</h3>
+            <p id="todayAppointments" class="stat-value">--</p>
+        </div>
+    </div>
+
+    <div class="quick-actions">
+        <strong>Management:</strong>
+        <a href="/admin/appointments-add" class="btn-action btn-add"><span>+</span> New Appointment</a>
+        <a href="/admin/doctors" class="btn-action">👨‍⚕️ Doctors</a>
+        <a href="/admin/patients" class="btn-action">👤 Patients</a>
+    </div>
+
+    <div class="dashboard-content-grid">
+        <div class="main-column">
+            <section class="card table-card">
+                <h3>Today's Schedule</h3>
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Patient</th>
+                            <th>Doctor</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsToday"></tbody>
+                </table>
+            </section>
+
+            <section class="card table-card" style="margin-top: 30px;">
+                <h3>Recent Activity</h3>
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Patient</th>
+                            <th>Doctor</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentAppointments"></tbody>
+                </table>
+            </section>
+        </div>
+
+        <div class="sidebar-column">
+            <section class="card table-card">
+                <h3>🏆 Top Doctors</h3>
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="topDoctors"></tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="/js/dashboard.js"></script>
+<%- include('partials/footer') %>

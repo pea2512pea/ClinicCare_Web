@@ -1,0 +1,20 @@
+<%- include('../partials/header', { title: 'Patient Profile' }) %>
+
+<div class="container">
+    <div class="page-header">
+        <div class="title-stack">
+            <a href="/admin/patients" class="back-link">← Back to Patients</a>
+            <h1>Patient Profile</h1>
+        </div>
+        <div class="header-actions">
+            <a href="/admin/patients-edit/<%= patientId %>" class="btn-action-edit">Edit Profile</a>
+        </div>
+    </div>
+
+    <div id="patient-detail" data-id="<%= patientId %>" class="profile-layout">
+        <div class="loading-spinner">Loading patient records...</div>
+    </div>
+</div>
+
+<script src="/js/patients/patients-detail.js"></script>
+<%- include('../partials/footer') %>

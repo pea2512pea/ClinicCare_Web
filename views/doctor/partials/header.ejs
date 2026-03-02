@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title || "Clinic System" %></title>
+    <link rel="icon" type="image/png" href="/images/light_icon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/doctor/header.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="navbar">
+          <a href="/doctor/" class="logo">
+            <img src="/images/light_icon.png" alt="Clinic Care Icon" />
+            Clinic Care
+          </a>
+          <div class="menu">
+            <a href="/doctor/">Home</a>>
+            <a href="#" onclick="handleLogout()">Logout</a>
+          </div>
+    </nav>
+    <main>
+  <div id="snackbar">
+    <div class="message">
+    </div>
+    <div class="detail">
+    </div>
+  </div>
+    <!-- <aside class="sidebar">
+      <div class="sidebar-content">
+        <a href="/doctor/" class="logo">
+          <img src="/images/light_icon.png" alt="Clinic Care Icon" />
+          <span>Clinic Care</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="/doctor/">Home</a>
+          <a class="logout-link" href="#" onclick="handleLogout()">Logout</a>
+        </nav>
+      </div>
+    </aside> -->

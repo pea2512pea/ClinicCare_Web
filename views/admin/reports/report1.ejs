@@ -1,0 +1,77 @@
+<%- include('../partials/header', { title: 'Appointment Analytics' }) %>
+
+<div class="report-container">
+    <header class="report-header">
+        <div class="header-text">
+            <h1>Appointment Analytics</h1>
+            <p>Generate detailed medical reports and track clinic volume.</p>
+        </div>
+        <button type="submit" form="filterForm" class="btn-generate">
+            <span class="icon">📊</span> Generate Report
+        </button>
+    </header>
+
+    <section class="filter-card">
+    <form id="filterForm" class="filter-grid">
+
+        <div class="filter-group">
+            <label>Date Range</label>
+            <div class="date-input-group">
+                <input type="date" id="startDate" placeholder="Start Date">
+                <span>to</span>
+                <input type="date" id="endDate" placeholder="End Date">
+            </div>
+        </div>
+        
+        <div class="filter-group">
+            <label>Status</label>
+            <select id="status">
+                <option value="">All Statuses</option>
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label>Medical Services</label>
+            <div id="servicesContainer" class="dynamic-select">
+                </div>
+        </div>
+
+        <div class="filter-group">
+            <label>Attending Doctor</label>
+            <div id="doctorsContainer" class="dynamic-select">
+                </div>
+        </div>
+    </form>
+</section>
+
+    <div id="appointmentsCount" class="stats-container"></div>
+
+    <section class="table-card">
+        <div class="table-responsive">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Time & Duration</th>
+                        <th>Patient Name</th>
+                        <th>Attending Doctor</th>
+                        <th>Services</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTable">
+                    <tr>
+                        <td colspan="7" class="no-data">Set filters to see results</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<script src="/js/reports/report1.js"></script>
+<%- include('../partials/footer') %>

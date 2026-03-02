@@ -1,0 +1,17 @@
+<%- include('../partials/header', { title: title }) %>
+
+<div class="container">
+    <div class="page-header">
+        <div class="title-stack">
+            <a href="/admin/appointments" class="back-link">← Back to Schedule</a>
+            <h1><%= title %></h1>
+        </div>
+    </div>
+
+    <div id="appointment-form-container" data-id="<%= appointmentId || '' %>">
+         <div class="loading-spinner">Initializing appointment data...</div>
+    </div>
+</div>
+
+<script src="/js/appointments/appointments-form.js"></script>
+<%- include('../partials/footer') %>

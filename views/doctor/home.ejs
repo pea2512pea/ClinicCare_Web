@@ -1,0 +1,40 @@
+<%- include('./partials/header', { title: 'Doctor Dashboard' }) %>
+
+<div id="doctor-dashboard">
+    <div class="today-section">
+        <h2>Today's Appointments</h2>
+        <table class="appt-table">
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Time & Duration</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="today-appointment-table-body">
+                </tbody>
+        </table>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 40px 0;">
+
+    <h2>Upcoming Schedule</h2>
+    <table class="appt-table">
+        <thead>
+            <tr>
+                <th>Patient</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="appointment-table-body">
+            </tbody>
+    </table>
+</div>
+
+<script src="/js/doctor/home.js"></script>
+<%- include('./partials/footer') %>

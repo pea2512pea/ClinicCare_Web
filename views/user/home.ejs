@@ -1,0 +1,14 @@
+<%- include('./partials_user/header.ejs', { title: 'Home Page' }) %>
+<div class="welcome-header">
+        <h1>Hello, <span id="userName">Patient</span>!</h1>
+        <p>You have the following medical appointments scheduled.</p>
+    </div>
+
+    <div class="card">
+        <h3>Upcoming Appointments</h3>
+        <div id="appointments">
+            <div class="loading-state">Loading your schedule...</div>
+        </div>
+    </div>
+<script src="/js/user/home.js"></script>
+<%- include('./partials_user/footer.ejs') %>
