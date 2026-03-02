@@ -1,10 +1,12 @@
-document.getElementById("register-form").addEventListener("submit", handleRegister);
-
 function showSnackbar(message, detail = "", type = "success") {
   const snackbar = document.getElementById("snackbar");
+
   snackbar.querySelector(".message").textContent = message;
   snackbar.querySelector(".detail").textContent = detail;
-  snackbar.className = "snackbar show " + type;
+
+  snackbar.className = "";
+  snackbar.classList.add("snackbar", "show", type);
+
   setTimeout(() => {
     snackbar.classList.remove("show");
     snackbar.classList.remove(type);
@@ -13,6 +15,74 @@ function showSnackbar(message, detail = "", type = "success") {
     snackbar.querySelector(".detail").textContent = "";
   }, 3000);
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.getElementById("register-form-container");
+  container.innerHTML = `
+        <div class="page-wrapper">
+            <div class="clinic-info">
+                <div class="badge">Health First</div>
+                <h1>Join Clinic Care</h1>
+                <p>Register today to book appointments, view your medical history, and connect with our specialists instantly.</p>
+                
+                <ul class="features-list">
+                    <li><span>✓</span> Fast Online Booking</li>
+                    <li><span>✓</span> 24/7 Access to Records</li>
+                    <li><span>✓</span> Secure & Private</li>
+                </ul>
+            </div>
+
+            <form id="register-form" class="form-container">
+                <div class="form-header">
+                    <h2>Patient Registration</h2>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Citizen ID</label>
+                    <input type="text" name="citizen_id" required placeholder="13-digit ID Number" maxlength="13">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" required placeholder="First Name" minlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" required placeholder="Last Name" minlength="2">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" name="phone" required placeholder="08x-xxx-xxxx" maxlength="10">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" required placeholder="name@example.com">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" required placeholder="Min 6 chars" minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm</label>
+                        <input type="password" name="confirm_password" required placeholder="Confirm" minlength="6">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Create Account</button>
+                <p class="login-link">Already a patient? <a href="/">Login here</a></p>
+            </form>
+        </div>
+    `;
+  document
+    .getElementById("register-form")
+    .addEventListener("submit", handleRegister);
+});
 
 function handleRegister(event) {
   event.preventDefault();

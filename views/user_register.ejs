@@ -1,97 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Patient Registration</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body
-    style="
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    "
-  >
-    <div class="page-wrapper">
-      <div class="clinic-info">
-        <div class="badge">Health First</div>
-        <h1>Join Clinic Care</h1>
-        <p>
-          Register today to book appointments and view your medical history.
-        </p>
-        <ul class="features-list">
-          <li><span>✓</span> Fast Online Booking</li>
-          <li><span>✓</span> 24/7 Access to Records</li>
-        </ul>
-      </div>
-
-      <form id="register-form" class="form-container">
-        <div class="form-header">
-          <h2>Patient Registration</h2>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Citizen ID</label>
-          <input
-            type="text"
-            name="citizen_id"
-            required
-            placeholder="13-digit ID"
-            maxlength="13"
-          />
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">First Name</label>
-            <input type="text" name="first_name" required minlength="2" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Last Name</label>
-            <input type="text" name="last_name" required minlength="2" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Phone</label>
-          <input type="tel" name="phone" required maxlength="10" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" name="email" required />
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" name="password" required minlength="6" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Confirm</label>
-            <input
-              type="password"
-              name="confirm_password"
-              required
-              minlength="6"
-            />
-          </div>
-        </div>
-
-        <button type="submit" class="btn-submit">Create Account</button>
-        <p class="login-link">
-          Already a patient? <a href="/login">Login here</a>
-        </p>
-      </form>
-    </div>
-
-    <div id="snackbar">
-      <div class="message"></div>
-      <div class="detail"></div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/user/user_register.js"></script>
-  </body>
-</html>
+<body
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  "
+>
+  <div id="register-form-container">Loading...</div>
+</body>
+<div id="snackbar">
+  <div class="message"></div>
+  <div class="detail"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/user/user_register.js"></script>
+<link rel="stylesheet" href="/css/style.css" />
