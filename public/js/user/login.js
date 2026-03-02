@@ -81,7 +81,10 @@ function handleLogin(event) {
       .then((response) => {
         const data = response.data;
         if (data && data.token) {
-          window.location.href = "/user/";
+          showSnackbar("Login successful! Redirecting...", "", "success");
+          setTimeout(() => {
+            window.location.href = "/user/";
+          }, 1500);
         } else {
           showSnackbar("Invalid response from server.", "", "error");
         }

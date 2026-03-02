@@ -165,7 +165,7 @@ function handleBookingSubmit(event) {
       showSnackbar("Appointment booked successfully!", "", "success");
       setTimeout(() => {
         window.location.href = "/user/appointments";
-      }, 4000);
+      }, 1500);
     })
     .catch((error) => {
       console.error(
@@ -177,5 +177,7 @@ function handleBookingSubmit(event) {
         error.response?.data?.error || error.message,
         "error",
       );
+      submitButton.classList.remove("disabled");
+      submitButton.disabled = false;
     });
 }

@@ -1,4 +1,6 @@
 const renderUserHomePage = (req, res) => {
+  console.log("User Home render");
+  
   res.render("user/home");
 };
 
