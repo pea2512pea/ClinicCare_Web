@@ -118,10 +118,6 @@ function editProfile(user) {
       );
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-      return showSnackbar("Invalid email format", "", "error");
-    }
-
     try {
       await axios.put("/api/user/profile", data);
       showSnackbar("Profile updated successfully!");

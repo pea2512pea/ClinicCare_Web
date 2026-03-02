@@ -178,6 +178,7 @@ function renderStatusOptions(appointment) {
 }
 
 async function handleSubmit(event, appointment) {
+  event.target.querySelector("button[type='submit']").disabled = true;
   event.preventDefault();
   if (selectedServices.length === 0) {
     showSnackbar("Please select at least one service.", "", "error");
@@ -225,7 +226,7 @@ async function handleSubmit(event, appointment) {
 
     setTimeout(() => {
       window.location.href = "/admin/appointments";
-    }, 4000);
+    }, 1500);
   } catch (error) {
     console.error(error);
     showSnackbar(
@@ -233,6 +234,7 @@ async function handleSubmit(event, appointment) {
       error.response?.data?.error || error.message,
       "error",
     );
+    event.target.querySelector("button[type='submit']").disabled = false;
   }
 }
 

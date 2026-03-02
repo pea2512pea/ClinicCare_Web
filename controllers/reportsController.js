@@ -1,5 +1,5 @@
 const renderReport1Page = async (req, res) => {
-  res.render("admin/reports/report1", { title: "Report 1", services });
+  res.render("admin/reports/report1", { title: "Report 1" });
 };
 
 const renderReport2Page = (req, res) => {
