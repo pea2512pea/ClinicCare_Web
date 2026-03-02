@@ -1,6 +1,8 @@
 import doctorViews from "./doctorRoutes.js";
 import userViews from "./userRoutes.js";
 import adminViews from "./adminRoutes.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 export default (app) => {
   app.get("/", (req, res) => {
