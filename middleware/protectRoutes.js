@@ -14,6 +14,9 @@ async function protectAdminRoute(req, res, next) {
   try {
     const response = await axios.get("/auth/", {
       withCredentials: true,
+      headers: {
+        Cookie: `token=${token}`,
+      },
     });
     const { role } = response.data;
     if (role !== "admin") {
@@ -43,6 +46,9 @@ async function protectDoctorRoute(req, res, next) {
   try {
     const response = await axios.get("/auth/", {
       withCredentials: true,
+      headers: {
+        Cookie: `token=${token}`,
+      },
     });
     const { role } = response.data;
     if (role !== "doctor") {
@@ -110,6 +116,9 @@ async function protectUnauthenticatedRoute(req, res, next) {
       // send cookie with request to check if token is valid and get user role
       const response = await axios.get("/auth/", {
         withCredentials: true,
+        headers: {
+          Cookie: `token=${token}`,
+        },
       });
       const { role } = response.data;
       if (role === "admin") {
