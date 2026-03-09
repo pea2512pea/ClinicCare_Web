@@ -3,7 +3,7 @@
 - Node.js, Git
 ## วิธีการติดตั้งและรันโปรแกรม
 ### 1. โคลน Repository ลงบนเครื่อง (Clone the repository)
-### 2. เพิ่มไฟล์ .env ให้มี environment เหมือน .env.example
+### 2. เพิ่มไฟล์ .env ให้มี environment เหมือน .env.example โดยมี backend_url ให้ตรงกันกับ Backend
 เปิด Terminal และติดตั้งไลบรารีที่จำเป็น
 ```bash
 npm install
